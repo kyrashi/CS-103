@@ -1,5 +1,6 @@
 /*******************************************************************************
  * Twenty-One (Blackjack) Project
+ Simulates a Blackjack game with user input from the player and a computer-automated dealer
 /******************************************************************************/
 
 #include <iostream>
