@@ -17,21 +17,9 @@ using namespace std;
  * Return NULL (a special address) if there is a problem,
  * opening the file or reading in the integer sizes.
  *
- * The first argument is the filename of the maze input.
- *  You should use an ifstream to open and read from this
- *  file.
- *
- * We also pass in two pointers to integers. These are
- * output parameters (i.e. declared by the caller and
- * passed-by-reference for this function to fill in).
- * Fill the integers pointed to by these arguments
- * with the number of rows and columns
- * read (the first two input values).
- *
  *************************************************/
 char** read_maze(char* filename, int* rows, int* cols)
 {
-  // *** You complete **** CHECKPOINT 1
   //open file
   ifstream ifile(filename);
   if(ifile.fail()){
@@ -64,7 +52,6 @@ char** read_maze(char* filename, int* rows, int* cols)
  *************************************************/
 void print_maze(char** maze, int rows, int cols)
 {
-    // *** You complete **** CHECKPOINT 1
   cout << rows << " " << cols << endl;
 
   for(int r=0;r<rows;r++){
