@@ -5,14 +5,10 @@ Author: CS 103 Course Staff
 
 Description: Input and output routines for BFS assignment.
 
-You shouldn't change this file.
-*/
-
 #ifndef MAZEIO_H
 #define MAZEIO_H
 
-// read maze from the given filename, allocate and return maze 2D array,
-// fill in rows and cols
+// read maze from the given filename, allocate and return maze 2D array
 char** read_maze(char* filename, int* rows, int* cols);
 
 // print maze to cout
