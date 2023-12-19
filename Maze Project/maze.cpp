@@ -8,14 +8,11 @@ maze.cpp
 
 using namespace std;
 
-// Prototype for maze_search, which you will fill in below.
+// Prototypes
 int maze_search(char**, int, int);
 int check_validity(char**, int, int);
 
-// Add other prototypes here for any functions you wish to use
-
-
-// main function to read, solve maze, and print result
+// Main function to read, solve maze, and print result
 int main(int argc, char* argv[]) {
     int rows, cols; //result
     char** mymaze=NULL;
@@ -29,11 +26,9 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    mymaze = read_maze(argv[1],&rows,&cols); // <---TASK: COMPLETE THIS FOR CHECKPOINT 1
-
-    // For checkpoint 2 you should check the validity of the maze
-    // You may do so anywhere you please and can abstract that
-    // operation with a function or however you like.
+    mymaze = read_maze(argv[1],&rows,&cols);
+    
+    // Check the validity of the maze
     int error = check_validity(mymaze,rows,cols);
     if(error==1){
         cout << invalid_char_message << endl;
@@ -43,9 +38,7 @@ int main(int argc, char* argv[]) {
     }
 
     //================================
-    // When working on Checkpoint 4, you will need to call maze_search
-    // and output the appropriate message or, if successful, print
-    // the maze.  But for Checkpoint 1, we print the maze, regardless.
+    // Print maze
     int search = maze_search(mymaze,rows,cols);
     if(search==1){
         print_maze(mymaze, rows, cols);
@@ -55,8 +48,7 @@ int main(int argc, char* argv[]) {
     }
 
     //================================
-    // ADD CODE BELOW 
-    // to delete all memory that read_maze allocated: CHECKPOINT 2
+    // Delete memory
     for(int i=0;i<rows;i++){
         delete [] mymaze[i];
     }
@@ -70,13 +62,10 @@ int main(int argc, char* argv[]) {
  *  1 if successful
  *  0 if no path exists
  *
- * If path is found fill it in with '*' characters
- *  but don't overwrite the 'S' and 'F' cells
- * NOTE: don't forget to deallocate memory in here too!
+ * If path is found, it will be filled in with '*' characters
  *************************************************/
 int maze_search(char** maze, const int rows, const int cols)
 {
-    // *** You complete **** CHECKPOINT 4
     if(check_validity(maze,rows,cols)!=0){
         return -1;
     }
