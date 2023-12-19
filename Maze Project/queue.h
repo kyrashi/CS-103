@@ -7,9 +7,6 @@ Description: Declares two new data types,
 - Location, a data type containing a row and column number
 - Queue, a list of Locations organized chronologically
 
-You shouldn't change this file.
-*/
-
 #ifndef QUEUE_H
 #define QUEUE_H
 
